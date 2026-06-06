@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>いきもの好き診断</title>
+<title>生き物好きタイプ診断</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -115,7 +115,7 @@
 <div id="app">
   <header class="site-header">
     <span class="paw">🐾</span>
-    <h1>いきもの好き診断</h1>
+    <h1>いきもの好き</h1>
     <p>あなたのいきもの愛のかたちを見つけよう</p>
   </header>
   <div id="main"></div>
@@ -778,7 +778,7 @@ function renderStart(){return`
   <p>20問の質問に答えるだけで、<br>あなたのいきもの愛のスタイルがわかります。</p>
   <p style="font-size:.8rem;color:#aaa;margin-top:.6rem;">所要時間：約3〜5分 / 全16タイプ</p>
   <br>
-  <button class="btn btn-primary" id="startBtn" style="font-size:1rem;padding:.9rem 2.8rem;">🐾 診断スタート</button>
+  <button class="btn btn-primary" id="startBtn" style="font-size:1rem;padding:.9rem 2.8rem;">🐾 スタート</button>
 </div>`;}
 
 function renderQuiz(){
@@ -857,11 +857,11 @@ function bindEvents(){
   document.getElementById("retryBtn")?.addEventListener("click",()=>{state={screen:"start",current:0,answers:{}};render();});
   document.getElementById("shareX")?.addEventListener("click",()=>{
     const t=TYPES[getKey()];
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(`私は「${t.name}」でした！\n#いきもの好き診断`)}`, "_blank");
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(`私は「${t.name}」でした！\n#生き物好きタイプ診断`)}`, "_blank");
   });
   document.getElementById("shareCopy")?.addEventListener("click",()=>{
     const t=TYPES[getKey()];
-    navigator.clipboard.writeText(`私は「${t.name}」でした！ #いきもの好き診断`);
+    navigator.clipboard.writeText(`私は「${t.name}」でした！ #生き物好きタイプ診断`);
     const b=document.getElementById("shareCopy");
     b.textContent="✅ コピーしました";setTimeout(()=>b.textContent="📋 コピー",2000);
   });
